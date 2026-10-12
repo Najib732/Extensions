@@ -1,20 +1,28 @@
 {
   "manifest_version": 3,
   "name": "Bengali Meaning on Select",
-  "version": "1.0.0",
-  "description": "Select English text to see its Bengali meaning above the line. Press Cmd/Ctrl+S to hear it pronounced.",
+  "version": "1.1.0",
+  "description": "Select English text, then press B for the Bengali meaning, Cmd/Ctrl+Shift+A for English synonyms and usage, or Cmd/Ctrl+Shift+S to hear it pronounced.",
   "permissions": [],
   "host_permissions": [
-    "https://translate.googleapis.com/*"
+    "https://translate.googleapis.com/*",
+    "https://api.datamuse.com/*",
+    "https://en.wiktionary.org/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["styles.css"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
       "run_at": "document_idle"
     }
   ]
