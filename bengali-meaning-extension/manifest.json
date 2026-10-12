@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Bengali Meaning on Select",
+  "version": "1.0.0",
+  "description": "Select English text to see its Bengali meaning above the line. Press Cmd/Ctrl+S to hear it pronounced.",
+  "permissions": [],
+  "host_permissions": [
+    "https://translate.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
